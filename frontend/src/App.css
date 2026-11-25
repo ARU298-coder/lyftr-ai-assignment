@@ -1,0 +1,313 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  background: #f6f7fb;
+  color: #1f2937;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.header {
+  height: 72px;
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 23px;
+}
+
+.header p {
+  margin: 3px 0 0;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #374151;
+}
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+.main {
+  height: calc(100vh - 72px);
+  display: flex;
+}
+
+.sidebar {
+  width: 270px;
+  background: white;
+  border-right: 1px solid #e5e7eb;
+  padding: 22px;
+}
+
+.sidebar h3 {
+  font-size: 13px;
+  margin: 0 0 9px;
+}
+
+.sidebar textarea {
+  width: 100%;
+  height: 110px;
+  resize: none;
+  border: 1px solid #d1d5db;
+  border-radius: 9px;
+  padding: 10px;
+  font-family: inherit;
+  outline: none;
+}
+
+.sidebar textarea:focus {
+  border-color: #6366f1;
+}
+
+.info-card {
+  margin-top: 25px;
+  padding-top: 18px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.info-card p {
+  color: #6b7280;
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 4px 0;
+}
+
+.chat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  margin: auto;
+  height: 100%;
+  width: 100%;
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 35px 30px;
+}
+
+.welcome {
+  text-align: center;
+  margin-top: 110px;
+  color: #6b7280;
+}
+
+.welcome .logo {
+  width: 55px;
+  height: 55px;
+  background: #111827;
+  color: white;
+  border-radius: 15px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.welcome h2 {
+  color: #111827;
+  margin-bottom: 7px;
+}
+
+.message-row {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.user-row {
+  justify-content: flex-end;
+}
+
+.user-message {
+  max-width: 70%;
+  background: #111827;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 16px 16px 3px 16px;
+  line-height: 1.5;
+}
+
+.assistant-row {
+  justify-content: flex-start;
+}
+
+.assistant-message {
+  max-width: 82%;
+  background: white;
+  border: 1px solid #e5e7eb;
+  padding: 17px;
+  border-radius: 4px 16px 16px 16px;
+}
+
+.assistant-label {
+  font-weight: 700;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.reply {
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.metadata {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 15px;
+  padding-top: 12px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.metadata span {
+  background: #f3f4f6;
+  padding: 5px 8px;
+  border-radius: 6px;
+  font-size: 10px;
+  color: #4b5563;
+}
+
+.metadata .badge {
+  font-weight: 700;
+}
+
+.metadata .live {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.metadata .cache {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.input-area {
+  display: flex;
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 14px;
+  padding: 8px;
+  margin: 0 30px;
+}
+
+.input-area textarea {
+  flex: 1;
+  border: none;
+  resize: none;
+  padding: 10px;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+}
+
+.input-area button {
+  background: #111827;
+  color: white;
+  border: none;
+  border-radius: 9px;
+  padding: 0 22px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.input-area button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.footer-text {
+  text-align: center;
+  font-size: 10px;
+  color: #9ca3af;
+  padding: 10px 0 14px;
+}
+
+.error-message {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+  padding: 12px;
+  border-radius: 9px;
+  margin-bottom: 15px;
+}
+
+.loading {
+  display: flex;
+  gap: 5px;
+  padding: 15px;
+}
+
+.loading span {
+  width: 7px;
+  height: 7px;
+  background: #9ca3af;
+  border-radius: 50%;
+  animation: pulse 1s infinite alternate;
+}
+
+.loading span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0.3;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 750px) {
+  .sidebar {
+    display: none;
+  }
+
+  .header {
+    padding: 0 18px;
+  }
+
+  .messages {
+    padding: 20px 15px;
+  }
+
+  .input-area {
+    margin: 0 15px;
+  }
+
+  .assistant-message,
+  .user-message {
+    max-width: 90%;
+  }
+}
